@@ -51,8 +51,8 @@
 
     #slide1 { background-image: url('/images/banner1.png'); }
     #slide2 { background-image: url('/images/banner2.png'); }
-    #slide3 { background-image: url('/images/banner3.png'); }
-    #slide4 { background-image: url('/images/banner4.png'); }
+    #slide3 { background-image: url('/images/banner1.png'); }
+    #slide4 { background-image: url('/images/banner2.png'); }
 </style>
 
 

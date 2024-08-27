@@ -26,6 +26,7 @@
             font-size: 30px;
             font-weight: bold;
             margin: 40px 0;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
             position: relative;
@@ -34,10 +35,10 @@
         .cart-title::after {
             content: '';
             display: block;
-            width: 100px;
+            width: 80px;
             height: 3px;
-            background: #3498db;
-            margin: 10px auto 0;
+            background: #68228B;
+            margin: 5px auto 0;
             transition: width 0.3s ease;
         }
 

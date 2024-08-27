@@ -60,8 +60,9 @@
             transform: translateY(20px);
             height: 500px;
             opacity: 0;
+            margin-top: 20px;
             animation: fadeIn 0.5s ease-out forwards;
-            margin-left: 205px;
+            margin-left: 235px;
         }
         @keyframes fadeIn {
             to {
@@ -73,7 +74,7 @@
             color: #333;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 500;
         }
         .input-group {
@@ -152,32 +153,32 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .reload-btn {
-            background-color: #FFD700;
-            color: black;
+            background-color: #444444;
+            color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             transition: background-color 0.3s, transform 0.2s;
         }
         .reload-btn:hover {
-            background-color: #EEC900;
+            background-color: #888888;
             transform: translateY(-2px);
         }
         .submit-btn {
-            background: linear-gradient(45deg, #f9e610, #e1cc02);
-            color: black;
+            background: #444444;
+            color: white;
             border: none;
             padding: 12px 20px;
-            border-radius: 6px;
+            border-radius: 5px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 13px;
             width: 100%;
             transition: background-color 0.3s, transform 0.2s;
         }
         .submit-btn:hover {
-            background-color: #3f51b5;
+            background-color: #888888;
             transform: translateY(-2px);
         }
     </style>

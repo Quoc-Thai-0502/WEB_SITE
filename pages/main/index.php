@@ -22,7 +22,7 @@
                     <li>
                         <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>">
                             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>">
-                            <p class="title_product"> Tên Sản Phẩm: <?php echo $row['tensanpham']?></p>
+                            <p class="title_product"><?php echo $row['tensanpham']?></p>
                             <p class="price_product">Giá:<?php echo number_format( $row['giasp'],0,',','.').'vnđ'?></p>
                             <p style="text-align: center;color:#d1d1d1"><?php echo $row['tendanhmuc']?></p>
                     </li>
@@ -42,7 +42,7 @@
                         float: left;
                         padding: 5px 13px;
                         margin: 5px;
-                        background: burlywood;
+                        background: #FFD700;
                         display: block;
                     }
                     ul.list_trang li a{
@@ -57,13 +57,12 @@
                 $row_count = mysqli_num_rows($sql_trang);    
                 $trang= ceil( $row_count/4);
                 ?>
-                <p>Trang Hiện Tại: <?php echo $page ?>/<?php echo $trang  ?></p>
                 
                 <ul class="list_trang">
                     <?php
                     for($i=1;$i<=$trang;$i++){
                     ?>
-                        <li <?php if($i == $page){echo 'style="background: brown;"';}else{echo ''; } ?> ><a href="index.php?trang=<?php echo $i ?>"><?php echo $i ?></a></li>
+                        <li <?php if($i == $page){echo 'style="background: #EEB422;"';}else{echo ''; } ?> ><a href="index.php?trang=<?php echo $i ?>"><?php echo $i ?></a></li>
                     <?php
                     }
                     ?>
@@ -80,7 +79,7 @@
         color: #333;
         text-align: center;
         margin-bottom: 30px;
-        margin-left: -315px;
+        margin-left: -300px;
         margin-top: 40px;
         position: relative;
     }

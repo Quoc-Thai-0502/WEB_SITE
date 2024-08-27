@@ -8,7 +8,7 @@
         $diachi = $_POST['diachi'];
         $sql_dangky = mysqli_query($mysqli,"INSERT INTO tbl_dangky(tenkhachhang,email,diachi,matkhau,dienthoai) VALUE('".$tenkhachhang."','".$email."','".$diachi."','".$matkhau."','".$dienthoai."')");
         if($sql_dangky){
-            echo '<p style="color:green">Bạn Đã Đăng Ký Thành Công</p>';
+            echo '<div class="success-message">Bạn Đã Đăng Ký Thành Công</div>';
             $_SESSION['dangky']= $tenkhachhang;
             $_SESSION['id_khachhang']= mysqli_insert_id($mysqli);
          //   header('Location:index.php?quanly=giohang');
@@ -24,6 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký Thành Viên</title>
     <style>
+        /* CSS cho thông báo đăng ký thành công */
+
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
         * {
@@ -40,7 +42,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             max-width: 500px;
             width: 100%;
-            margin-left: 170px;
+            margin-left: 185px;
             animation: fadeIn 0.5s ease-out;
         }
 
@@ -109,18 +111,19 @@
         }
 
         button {
-            background: linear-gradient(45deg, #f9e610, #e3cc02);
-            color: black;
+            background: #444444;
+            color: white;
             border: none;
             padding: 12px;
+            text-align: center;
+            font-size: 11px;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease;
         }
 
         button:hover {
-            background-color: #d1cc02;
+            background-color: #888888;
         }
 
         button:active {
@@ -152,6 +155,41 @@
                 padding: 20px;
             }
         }
+            .success-message {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+        margin: 0px auto;
+        padding: 1px;
+        max-width: 280px;
+        animation: fadeIn 0.5s ease-out;
+        margin-left: 900px;
+
+    }
+
+    .success-message::before {
+        content: '✔';
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 24px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive design */
+    @media (max-width: 480px) {
+        .success-message {
+            font-size: 16px;
+            padding: 15px;
+        }
+    }
     </style>
 </head>
 <body>

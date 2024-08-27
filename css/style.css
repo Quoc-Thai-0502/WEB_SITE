@@ -21,12 +21,6 @@ i.fa.fa-minus.fa-style:hover{
     color: brown;
 }
 
-.wrapper_chitiet{
-    height: auto;
-    width: 90%;
-    margin:0 auto;
-}
-
 
 
 .header {
@@ -217,33 +211,9 @@ p.price_product{
     clear: both;
 }
 
-.home-sci{
-    position: absolute;
-    background-color: red;
-    bottom: -15px;
-    width: 160px;
-    display: flex;
-    right: 77px;
-    justify-content: space-between;
-}
 
-.home-sci a{
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 50%;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    z-index: 1;
-    overflow: hidden;
-    transition: .5s;
-}
+
+
 
 .home-sci a:hover{
     color: lightblue;
@@ -359,6 +329,7 @@ p.title_product:hover {
         opacity: 1;
     }
 }
+
 
 
 @keyframes pulse {
