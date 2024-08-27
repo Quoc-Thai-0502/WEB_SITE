@@ -17,7 +17,7 @@
     }
 
 ?>
-<p>Dăng Kí Thành Viên</p>
+<p1>Đăng Kí Thành Viên</p1>
 <style type="text/css">
     table.dangky tr td{
         padding: 5px;
@@ -53,3 +53,133 @@
 
 </table>
 </form>
+<style>
+p1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 235px;
+    margin-bottom: 60px;
+    margin-top: 100px;
+    
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+p1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #3498db;
+    margin-left: 370px;
+    margin-bottom: 30px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.registration-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.dangky {
+    width: 72%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    
+}
+
+.dangky tr td {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.dangky tr td:first-child {
+    font-weight: bold;
+    text-align: center;
+    width: 30%;
+}
+
+.dangky input[type="text"],
+.dangky input[type="email"],
+.dangky input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.dangky input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.dangky input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.dangky a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+
+.form-actions {
+    text-align: right;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    
+}
+
+@media (max-width: 768px) {
+    .dangky tr td:first-child {
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .dangky tr td:last-child {
+        width: 100%;
+        
+    }
+}
+
+</style>

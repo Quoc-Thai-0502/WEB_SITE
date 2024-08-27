@@ -68,3 +68,128 @@
                     }
                     ?>
                 </ul> 
+                <style>
+    .product-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+        margin-left: -315px;
+        position: relative;
+    }
+
+    h3::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #3498db;
+        margin: 10px auto 0;
+    }
+
+    .product_list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .product_list li {
+        width: calc(25% - 20px);
+        margin-bottom: 30px;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .product_list li:hover {
+        transform: translateY(-5px);
+    }
+
+    .product_list li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .product_list li img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .title_product, .price_product {
+        padding: 10px 15px;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .price_product {
+        color: #e74c3c;
+        font-weight: bold;
+    }
+
+    .category {
+        text-align: center;
+        color: #7f8c8d;
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+
+    .pagination {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .list_trang {
+        display: inline-flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .list_trang li {
+        margin: 0 5px;
+    }
+
+    .list_trang li a {
+        display: block;
+        padding: 8px 12px;
+        background: #f1c40f;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+    }
+
+    .list_trang li a:hover, .list_trang li.active a {
+        background: #e67e22;
+    }
+
+    .page-info {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #7f8c8d;
+    }
+
+    @media (max-width: 768px) {
+        .product_list li {
+            width: calc(50% - 15px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product_list li {
+            width: 100%;
+        }
+    }
+</style>
