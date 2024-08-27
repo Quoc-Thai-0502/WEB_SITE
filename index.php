@@ -117,7 +117,7 @@
             line-height: 1.6;
         }
         .social-icons a {
-            color: #fff;
+            color: #000000;
             font-size: 24px;
             margin: 0 10px;
             transition: transform 0.3s ease;

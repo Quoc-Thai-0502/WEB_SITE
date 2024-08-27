@@ -1,7 +1,7 @@
 <p>
   Huỳnh Giang Hữu Tuấn 
   Email: tuan12678999@gmai.com
-  sdt: 0702085106
+  Số Điện Thoại: 0702085106
 </p>
 <?php
     $sql_lh= "SELECT * FROM tbl_lienhe WHERE id=1";

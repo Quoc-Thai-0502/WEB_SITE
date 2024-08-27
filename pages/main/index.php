@@ -159,22 +159,12 @@
 
     .list_trang li {
         margin: 0 5px;
+        border-radius: 10px;
+        background: none;
     }
 
-    .list_trang li a {
-        display: block;
-        padding: 8px 12px;
-        background: #f1c40f;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 4px;
-        transition: background 0.3s ease;
-    }
 
-    .list_trang li a:hover, .list_trang li.active a {
-        background: #e67e22;
-    }
-
+  
     .page-info {
         text-align: center;
         margin-bottom: 10px;

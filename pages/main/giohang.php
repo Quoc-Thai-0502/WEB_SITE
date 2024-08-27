@@ -1,12 +1,42 @@
 
-<p2>Giỏ Hàng
-  <?php
-   if(isset($_SESSION['dangky'])){
-     echo 'Xin Chào:'.'<span style="color: red">'.$_SESSION['dangky'] .'</span>';
-    // echo $_SESSION['id_khachhang'];
-   }
-  ?>
-</p2>
+<p2>Giỏ Hàng</p2>
+<?php
+if(isset($_SESSION['dangky'])):
+?>
+<div class="welcome-message">
+    Xin chào, <span class="user-name"><?php echo htmlspecialchars($_SESSION['dangky']); ?></span>!
+</div>
+<?php
+endif;
+?>
+<style>
+    .welcome-message {
+        background-color: #f8f9fa;
+        border-left: 4px solid #007bff;
+        color: #495057;
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+        padding: 10px 15px;
+        margin: 10px 0;
+        border-radius: 0 4px 4px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: inline-block;
+        margin-left: 25px;
+    }
+
+    .welcome-message .user-name {
+        color: #007bff;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    @media (max-width: 768px) {
+        .welcome-message {
+            font-size: 14px;
+            padding: 8px 12px;
+        }
+    }
+</style>
 <?php
     if(isset($_SESSION["cart"])){
 

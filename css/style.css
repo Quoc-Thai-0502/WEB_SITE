@@ -169,11 +169,11 @@ ul.list_sidebar {
     width: 100%;
     list-style: none;
     line-height: 27px  ;
-    background-color: #09aad0;
+    background-color: #ffffff;
 }
 
 ul.list_sidebar li:hover {
-    background: cadetblue;
+    background: rgb(156, 155, 155);
 }
 
 ul.list_sidebar li a{
@@ -199,7 +199,7 @@ ul.list_sidebar li a{
 
 ul.product_list {
     padding: 0;
-    margin: 0;
+    margin-top: -20px;
     list-style: none;
     width: 100%;
 }
