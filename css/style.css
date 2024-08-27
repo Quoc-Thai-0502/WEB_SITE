@@ -27,25 +27,7 @@ i.fa.fa-minus.fa-style:hover{
     margin:0 auto;
 }
 
-.hinhanh_sanpham{
-    float: left;
-    width: 40%;
-}
 
-.chitiet_sanpham{
-    float: left;
-    width: 45%;
-    margin:0 10px;
-}
-
-input.themgiohang{
-    border: none;
-    background: brown;
-    color: #fff;
-    padding: 12px;
-    font-size: 13px;
-    cursor: pointer;
-}
 
 .header {
     height: 280px;
@@ -154,15 +136,7 @@ ul.list_menu li a::before {
     width: 100%;
 }
 
-.sidebar{
-    border: 0px solid #000066;
-    height: 390px;
-    width: 20%;
-    margin-left: 5px;
-    margin-top: 5px;
-    float: left;   
-    
-}
+
 
 ul.list_sidebar {
     padding: 0;
@@ -386,15 +360,6 @@ p.title_product:hover {
     }
 }
 
-.sidebar {
-    
-    height: 390px;
-    width: 20%;
-    margin-left: 5px;
-    margin-top: 5px;
-    float: left;
-    animation: slideInLeft 1s ease-in-out;
-}
 
 @keyframes pulse {
     0% {
@@ -408,9 +373,6 @@ p.title_product:hover {
     }
 }
 
-input.themgiohang:hover {
-    animation: pulse 0.6s infinite;
-}
 
 
 

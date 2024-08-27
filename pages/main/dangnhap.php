@@ -34,86 +34,104 @@
         }
     }
 ?>
-<body>
-<form action="" autocomplete="off" method="POST">
-    <table border="0" width="50%" class="table-login" style="text-align:center; border-collapse:collapse;">
-        <tr>
-            <td colspan="2"><h3>Đăng Nhập Khách Hàng</h3></td>
-        </tr>
-        <tr>
-            <td>Tài Khoản</td>
-            <td><input type="text" size="50%" name="email" placeholder="Email..." required></td>
-        </tr>
-        <tr>
-            <td>Mật Khẩu</td>
-            <td><input type="password" size="50%" name="password" placeholder="Mật Khẩu..." required></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <div class="captcha-area">
-                    <div class="captcha-img">
-                    <div style="position: relative; display: inline-block; width: 410px; height: 200px;">
-    <img style="width: 100%; height: 100%;" src="https://microsofters.com/wp-content/uploads/2021/06/img21-scaled.jpg" alt="Captcha Background">
-    <span class="captcha" id="captcha" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size:50px; font-weight: bold;"></span>
-    </div>
-                    </div>
-                    <button style="width: 100px; height:40px" type="button" class="reload-btn" onclick="generateCaptcha();"><i class="fa-solid fa-arrows-rotate"></i>change captcha</button>
-                </div>
-                <input type="text" name="captcha_input" id="captcha_input" placeholder="Enter Captcha" required class="form-control">
-                <input type="hidden" name="captcha_generated" id="captcha_generated">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2"><input type="submit" name="dangnhap" value="Đăng Nhập"></td>
-        </tr>
-    </table>
-</form>
-
-<style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+       * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
+
         .login-container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            padding: 20px;
             width: 400px;
+            max-width: 90%;
+            transform: translateY(20px);
+            height: 500px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            margin-left: 205px;
+        }
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
         h3 {
-            color: black;
+            color: #333;
             text-align: center;
             margin-bottom: 30px;
-            font-size: 18px;
+            font-size: 24px;
+            font-weight: 500;
         }
         .input-group {
-            margin-bottom: 20px;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #606770;
+            margin-bottom: 25px;
+            position: relative;
         }
         .input-group input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #dddfe2;
-            border-radius: 6px;
+            padding: 10px 0;
             font-size: 16px;
+            color: #333;
+            border: none;
+            border-bottom: 1px solid #777;
+            outline: none;
+            background: transparent;
+            transition: 0.3s;
+        }
+        .input-group label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #777;
+            pointer-events: none;
+            transition: 0.3s ease-out;
+        }
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label {
+            top: -20px;
+            font-size: 12px;
+            color: #5264AE;
+        }
+        .input-group input:focus ~ .bar:before {
+            width: 100%;
+        }
+        .bar {
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+        .bar:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background: #5264AE;
+            transition: 0.3s ease-out;
         }
         .captcha-area {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .captcha-img {
             position: relative;
             width: 100%;
-            height: 100%;
+            height: 100px;
             margin-bottom: 10px;
             overflow: hidden;
             border-radius: 6px;
@@ -134,46 +152,76 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .reload-btn {
-            background-color: #42b72a;
-            color: white;
+            background-color: #FFD700;
+            color: black;
             border: none;
             padding: 10px 15px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 14px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .reload-btn:hover {
-            background-color: #36a420;
+            background-color: #EEC900;
+            transform: translateY(-2px);
         }
         .submit-btn {
-            background-color: #1877f2;
-            color: white;
+            background: linear-gradient(45deg, #f9e610, #e1cc02);
+            color: black;
             border: none;
             padding: 12px 20px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 18px;
             width: 100%;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .submit-btn:hover {
-            background-color: #166fe5;
+            background-color: #3f51b5;
+            transform: translateY(-2px);
         }
     </style>
+</head>
+<body>
+    <div class="login-container">
+        <h3>Đăng Nhập Khách Hàng</h3>
+        <form action="" method="POST" autocomplete="off">
+            <div class="input-group">
+                <input type="text" name="email" required>
+                <span class="bar"></span>
+                <label>Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" required>
+                <span class="bar"></span>
+                <label>Mật Khẩu</label>
+            </div>
+            <div class="captcha-area">
+                <div class="captcha-img">
+                    <img src="https://microsofters.com/wp-content/uploads/2021/06/img21-scaled.jpg" alt="Captcha Background">
+                    <span class="captcha" id="captcha"></span>
+                </div>
+                <button type="button" class="reload-btn" onclick="generateCaptcha();">
+                    <i class="fas fa-sync-alt"></i> Đổi Captcha
+                </button>
+            </div>
+            <div class="input-group">
+                <input type="text" name="captcha_input" id="captcha_input" required>
+                <span class="bar"></span>
+                <label>Nhập Captcha</label>
+            </div>
+            <input type="hidden" name="captcha_generated" id="captcha_generated">
+            <button type="submit" name="dangnhap" class="submit-btn">Đăng Nhập</button>
+        </form>
+    </div>
 
-<script>
-// Generate a simple CAPTCHA (for example, a random number)
-function generateCaptcha() {
-    const captcha = Math.random().toString(36).substr(2, 6); // Generates a random string with 6 characters
-    document.getElementById('captcha').innerText = captcha; // Display CAPTCHA in the span
-    document.getElementById('captcha_generated').value = captcha; // Store the generated captcha in a hidden field
-}
-
-// Call the function to generate CAPTCHA on page load
-generateCaptcha();
-</script>
- 
+    <script>
+        function generateCaptcha() {
+            const captcha = Math.random().toString(36).substr(2, 6);
+            document.getElementById('captcha').innerText = captcha;
+            document.getElementById('captcha_generated').value = captcha;
+        }
+        generateCaptcha();
+    </script>
 </body>
-
-
+</html>

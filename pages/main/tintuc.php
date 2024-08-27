@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tin Tức Điện Thoại Mới Nhất</title>
     <style>
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -17,6 +23,7 @@
             margin-top: 30px;
             background: white;
             padding: 20px;
+            margin-left: 40px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1 {

@@ -65,11 +65,17 @@
 <style>
    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+   * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
 .form-container {
     max-width: 500px;
     padding: 20px;
     margin-left: 150px;
-    margin-top: -35px;
+    margin-top: 20px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);

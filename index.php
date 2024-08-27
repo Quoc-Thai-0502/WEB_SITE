@@ -72,6 +72,11 @@
 <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
+   * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             
             padding: 0;
@@ -88,6 +93,7 @@
             width: 100%;
             box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
         }
+        
         .footer-content {
             display: flex;
             justify-content: space-around;
@@ -115,6 +121,7 @@
         .contact-info {
             font-size: 14px;
             line-height: 1.6;
+            text-align: left;
         }
         .social-icons a {
             color: #000000;
@@ -141,25 +148,24 @@
             to { transform: scale(1.05); }
         }
     </style>
-<div class="footer">
+
+    <div class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <p class="footer_copyright">NHÓM TÁC GIẢ</p>
-                <p class="footer_visits">
-                </p>
             </div>
             <div class="footer-section contact-info">
-                <p>Email: nhomtacgia@gmail.com</p>
-                <p>Điện thoại: +84 343 888 776</p>
-                <p>Địa chỉ: 12 Đường số 42, phường Thảo Điền, Quận 2</p>
+                <p><i class="bi bi-envelope"></i> Email: nhomtacgia@gmail.com</p>
+                <p><i class="bi bi-telephone"></i> Điện thoại: +84 343 888 776</p>
+                <p><i class="bi bi-geo-alt"></i> Địa chỉ: 12 Đường số 42, phường Thảo Điền, Quận 2</p>
             </div>
             <div class="footer-section social-icons">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-twitter"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#" style="animation: pulse 2s infinite;"><i class="bi bi-facebook"></i></a>
+                <a href="#" style="animation: pulse 2s infinite 0.5s;"><i class="bi bi-twitter"></i></a>
+                <a href="#" style="animation: pulse 2s infinite 1s;"><i class="bi bi-instagram"></i></a>
+                <a href="#" style="animation: pulse 2s infinite 1.5s;"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
     </div>
-</body>
+
 </html> 

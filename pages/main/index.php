@@ -76,11 +76,12 @@
     }
 
     h3 {
-        font-size: 24px;
+        font-size: 30px;
         color: #333;
         text-align: center;
         margin-bottom: 30px;
         margin-left: -315px;
+        margin-top: 40px;
         position: relative;
     }
 
@@ -90,13 +91,13 @@
         width: 50px;
         height: 3px;
         background: #3498db;
-        margin: 10px auto 0;
+        margin: 15px 715px 0;
     }
 
     .product_list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: left;
         padding: 0;
         margin: 0;
         list-style: none;
@@ -164,7 +165,10 @@
     }
 
 
-  
+    .list_trang li a:hover, .list_trang li.active a {
+        background: #e67e22;
+    }
+
     .page-info {
         text-align: center;
         margin-bottom: 10px;

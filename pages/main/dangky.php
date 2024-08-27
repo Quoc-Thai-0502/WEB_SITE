@@ -17,169 +17,172 @@
     }
 
 ?>
-<p1>Đăng Kí Thành Viên</p1>
-<style type="text/css">
-    table.dangky tr td{
-        padding: 5px;
-    }
-</style>
-<form action="" method="POST">
-<table class="dangky" border="1" width="50%" style="border-collapse:collapse;">
-    <tr>
-        <td>Họ Và Tên</td>
-        <td><input type="text" size="50"  name="hovaten"></td>
-    </tr>
-    <tr>
-        <td>Email</td>
-        <td><input type="text" size="50" name="email"></td>
-    </tr>
-    <tr>
-        <td>Điện Thoại</td>
-        <td><input type="text" size="50"  name="dienthoai"></td>
-    </tr>
-    <tr>
-        <td>Địa Chỉ</td>
-        <td><input type="text" size="50"  name="diachi"></td>
-    </tr>
-    <tr>
-        <td>Mật Khẩu</td>
-        <td><input type="text" size="50"  name="matkhau"></td>
-    </tr>
-    <tr>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Thành Viên</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-        <td><input type="submit"   name="dangky" value="Đăng Ký"></td>
-        <td><a href="index.php?quanly=dangnhap">Đăng Nhập Nếu Có Tài Khoản</a></td>
-    </tr>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-</table>
-</form>
-<style>
-p1 {
-    text-align: center;
-    color: #2c3e50;
-    font-size: 32px;
-    font-weight: bold;
-    margin-left: 235px;
-    margin-bottom: 60px;
-    margin-top: 100px;
-    
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-}
-p1::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 3px;
-    background: #3498db;
-    margin-left: 370px;
-    margin-bottom: 30px;
-}
+       
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin-left: 170px;
+            animation: fadeIn 0.5s ease-out;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    
-}
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+            position: relative;
+        }
 
-.form-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
+        h1::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #764ba2;
+            margin: 10px auto 0;
+            transition: width 0.3s ease;
+        }
 
-.registration-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
-}
+        .container:hover h1::after {
+            width: 100px;
+        }
 
-.dangky {
-    width: 72%;
-    border-collapse: separate;
-    border-spacing: 0 15px;
-    
-}
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-.dangky tr td {
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-}
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
 
-.dangky tr td:first-child {
-    font-weight: bold;
-    text-align: center;
-    width: 30%;
-}
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            background-color: transparent;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
 
-.dangky input[type="text"],
-.dangky input[type="email"],
-.dangky input[type="password"] {
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-}
+        .form-group input:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
 
-.dangky input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+        .form-group label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            font-size: 16px;
+            color: #999;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
 
-.dangky input[type="submit"]:hover {
-    background-color: #0056b3;
-}
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+            top: -20px;
+            font-size: 12px;
+            color: #764ba2;
+        }
 
-.dangky a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 16px;
-    text-align: center;
-    display: block;
-    border-radius: 10px;
-    margin-top: 10px;
-}
+        button {
+            background: linear-gradient(45deg, #f9e610, #e3cc02);
+            color: black;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
 
+        button:hover {
+            background-color: #d1cc02;
+        }
 
+        button:active {
+            transform: scale(0.98);
+        }
 
-.form-actions {
-    text-align: right;
-    border-top: 1px solid #ccc;
-    padding-top: 15px;
-    
-}
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-@media (max-width: 768px) {
-    .dangky tr td:first-child {
-        text-align: center;
-        width: 100%;
-        display: block;
-        margin-bottom: 10px;
-        border-radius: 10px;
-    }
+        .login-link a {
+            color: #764ba2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    .dangky tr td:last-child {
-        width: 100%;
-        
-    }
-}
+        .login-link a:hover {
+            color: #667eea;
+        }
 
-</style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Đăng Ký Thành Viên</h1>
+        <form action="" method="POST">
+            <div class="form-group">
+                <input type="text" id="hovaten" name="hovaten" required placeholder=" ">
+                <label for="hovaten">Họ Và Tên</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder=" ">
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="dienthoai" name="dienthoai" required placeholder=" ">
+                <label for="dienthoai">Điện Thoại</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="diachi" name="diachi" required placeholder=" ">
+                <label for="diachi">Địa Chỉ</label>
+            </div>
+            <div class="form-group">
+                <input type="password" id="matkhau" name="matkhau" required placeholder=" ">
+                <label for="matkhau">Mật Khẩu</label>
+            </div>
+            <button type="submit" name="dangky">Đăng Ký</button>
+        </form>
+        <div class="login-link">
+            <a href="index.php?quanly=dangnhap">Đăng Nhập Nếu Có Tài Khoản</a>
+        </div>
+    </div>
+</body>
+</html>
