@@ -1,3 +1,4 @@
+
 <?php
     if(isset($_GET['trang'])){
         $page = $_GET['trang'];

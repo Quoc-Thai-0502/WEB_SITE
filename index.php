@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" href ="/images/image.png" type = "image/png">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -52,7 +53,7 @@
     #slide1 { background-image: url('/images/banner1.png'); }
     #slide2 { background-image: url('/images/banner2.png'); }
     #slide3 { background-image: url('/images/banner1.png'); }
-    #slide4 { background-image: url('/images/banner2.png'); }
+    #slide4 { background-image: url('/images/banner3.png'); }
 </style>
 
 

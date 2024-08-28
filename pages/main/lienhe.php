@@ -7,30 +7,36 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <?php
-        if(!empty($_POST["send"])){
-            $userName = htmlspecialchars($_POST["userName"]);
-            $userEmail = filter_var($_POST["userEmail"], FILTER_SANITIZE_EMAIL);
-            $userPhone = htmlspecialchars($_POST["userPhone"]);
-            $userMessage = htmlspecialchars($_POST["userMessage"]);
-            $toEmail = "tuan1278999@gmail.com";
+<?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $toEmail = "thaidinh23091@gmail.com"; // Địa chỉ email của bạn
+            $subject = "Yêu cầu liên hệ mới từ website";
 
-            $subject = "Contact Form Submission from " . $userName;
+            // Lấy dữ liệu từ form
+            $userName = filter_input(INPUT_POST, "userName", FILTER_SANITIZE_SPECIAL_CHARS);
+            $userEmail = filter_input(INPUT_POST, "userEmail", FILTER_SANITIZE_EMAIL);
+            $userPhone = filter_input(INPUT_POST, "userPhone", FILTER_SANITIZE_SPECIAL_CHARS);
+            $userMessage = filter_input(INPUT_POST, "userMessage", FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $mailHeaders = "From: " . $userName . "<" . $userEmail . ">\r\n";
-            $mailHeaders .= "Reply-To: " . $userEmail . "\r\n";
-            $mailHeaders .= "Content-type: text/plain; charset=UTF-8\r\n";
-            $mailHeaders .= "Phone: " . $userPhone . "\r\n";
-            $mailHeaders .= "Message:\r\n" . $userMessage . "\r\n";
+            // Tạo nội dung email
+            $emailContent = "Tên: $userName\n";
+            $emailContent .= "Email: $userEmail\n";
+            $emailContent .= "Số điện thoại: $userPhone\n\n";
+            $emailContent .= "Nội dung:\n$userMessage\n";
 
-            if(mail($toEmail, $subject, $userMessage, $mailHeaders)){
-                $message = "Your information has been received successfully.";
+            // Thiết lập headers
+            $headers = "From: $userEmail\r\n";
+            $headers .= "Reply-To: $userEmail\r\n";
+            $headers .= "X-Mailer: PHP/" . phpversion();
+
+            // Gửi email
+            if (mail($toEmail, $subject, $emailContent, $headers)) {
+                $message = "Thông tin của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm.";
             } else {
-                $message = "There was an error sending your message. Please try again later.";
+                $message = "Thông tin của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại sớm.";
             }
-        }
-    ?>
-
+}
+?>
 <div class="form-container">
     <form method="post" name="emailContact">
         <h1>
