@@ -90,7 +90,7 @@
         width: 50px;
         height: 3px;
         background: #3498db;
-        margin: 15px 715px 0;
+        margin: 15px 700px 0;
     }
 
     .product_list {

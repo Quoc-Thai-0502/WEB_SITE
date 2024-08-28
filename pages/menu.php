@@ -68,7 +68,6 @@
                 overflow: hidden;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 transition: all 0.3s ease;
-                margin-right: -80px;
             }
 
             .search-container:hover,

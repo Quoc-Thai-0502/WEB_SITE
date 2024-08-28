@@ -15,6 +15,8 @@
             text-align: center;
             max-width: 600px;
             width: 90%;
+            height: 350px;
+            margin-top: 50px;
             margin-left: 80px;
         }
 
@@ -24,13 +26,13 @@
             margin-bottom: 20px;
         }
 
-        h1 {
+        h2 {
             color: #333;
             font-size: 28px;
             margin-bottom: 20px;
         }
 
-        p {
+        p1 {
             color: #666;
             font-size: 16px;
             line-height: 1.6;
@@ -42,7 +44,7 @@
             color: #4CAF50;
         }
 
-        .cta-button {
+        .cta-button1 {
             display: inline-block;
             background-color: #4CAF50;
             color: white;
@@ -50,10 +52,12 @@
             text-decoration: none;
             border-radius: 4px;
             font-weight: 500;
+            margin-top: 50px;
+            margin-left: 290px;
             transition: background-color 0.3s ease;
         }
 
-        .cta-button:hover {
+        .cta-button1:hover {
             background-color: #45a049;
         }
 
@@ -62,11 +66,11 @@
                 padding: 30px;
             }
 
-            h1 {
+            h2 {
                 font-size: 24px;
             }
 
-            p {
+            p1 {
                 font-size: 14px;
             }
         }
@@ -75,10 +79,10 @@
 <body>
     <div class="thank-you-container">
         <div class="thank-you-icon">&#10004;</div>
-        <h1>Cảm ơn quý khách đã mua hàng!</h1>
-        <p>Chúng tôi xin chân thành cảm ơn quý khách đã tin tưởng và lựa chọn sản phẩm của chúng tôi. Đơn hàng của quý khách đã được xác nhận và đang được xử lý.</p>
-        <p>Chúng tôi sẽ gửi email xác nhận cùng với thông tin chi tiết về đơn hàng và thời gian giao hàng dự kiến.</p>
-        <a href="index.php" class="cta-button">Tiếp tục mua sắm</a>
+        <h2>Cảm ơn quý khách đã mua hàng!</h2>
+        <p1>Chúng tôi xin chân thành cảm ơn quý khách đã tin tưởng và lựa chọn sản phẩm của chúng tôi. Đơn hàng của quý khách đã được xác nhận và đang được xử lý.</p1>
+        <p1>Chúng tôi sẽ gửi email xác nhận cùng với thông tin chi tiết về đơn hàng và thời gian giao hàng dự kiến.</p1>
     </div>
+        <a href="index.php" class="cta-button1">Tiếp tục mua sắm</a>
 </body>
 </html>

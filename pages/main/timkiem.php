@@ -1,28 +1,29 @@
 <?php
-    if(isset($_POST['tukhoa'])){
-        $tukhoa = $_POST['tukhoa'];
+if(isset($_POST['tukhoa'])){
+    $tukhoa = $_POST['tukhoa'];
+    $sql_pro = "SELECT * FROM tbl_sanpham, tbl_danhmuc WHERE tbl_sanpham.id_danhmuc = tbl_danhmuc.id_danhmuc AND tbl_sanpham.tensanpham LIKE '%".$tukhoa."%'";
+    $query_pro = mysqli_query($mysqli, $sql_pro);
+    ?>
+    <h3>Kết quả tìm kiếm cho: "<?php echo htmlspecialchars($tukhoa); ?>"</h3>
+    <ul class="product_list">
+    <?php
+    while($row = mysqli_fetch_array($query_pro)){
+        ?>
+        <li>
+            <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham']; ?>">
+                <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']; ?>" alt="<?php echo $row['tensanpham']; ?>">
+                <p class="title_product">Tên Sản Phẩm: <?php echo $row['tensanpham']; ?></p>
+                <p class="price_product">Giá: <?php echo number_format($row['giasp'], 0, ',', '.'); ?> VNĐ</p>
+                <p class="category"><?php echo $row['tendanhmuc']; ?></p>
+            </a>
+        </li>
+        <?php
     }
-    $sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id_danhmuc AND tbl_sanpham.tensanpham LIKE '%".$tukhoa."%'";
-    $query_pro = mysqli_query($mysqli,$sql_pro);
+    ?>
+    </ul>
+    <?php
+}
 ?>
-<h3>Từ Khóa Tìm Kiếm: <?php echo $_POST['tukhoa'] ?></h3>
-                <ul class="product_list">
-                    <?php
-                     while($row= mysqli_fetch_array($query_pro)){
-                    ?>
-
-                    <li>
-                        <a1 href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>">
-                            <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>">
-                            <p class="title_product"> Tên Sản Phẩm: <?php echo $row['tensanpham']?></p>
-                            <p class="price_product">Giá:<?php echo number_format( $row['giasp'],0,',','.').'vnđ'?></p>
-                            <p style="text-align: center;color:#d1d1d1"><?php echo $row['tendanhmuc']?></p>
-                    </li>
-                    <?php
-                     }
-                    ?>
-
-                </ul>
                 <style>
 
             body {
@@ -131,4 +132,32 @@
                 }
             }
 
+                        .search-container {
+                position: relative;
+                max-width: 300px;
+                margin: 20px auto;
+            }
+
+            #search-input {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+
+            #search-suggestions {
+                width: 100%;
+            }
+
+            /* Tùy chỉnh giao diện của các gợi ý */
+            #search-suggestions option {
+                padding: 10px;
+                font-size: 14px;
+                background-color: #f9f9f9;
+                border-bottom: 1px solid #ddd;
+            }
+
             </style>
+
+            

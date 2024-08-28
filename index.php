@@ -152,7 +152,7 @@
     <div class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <p class="footer_copyright">NHÓM TÁC GIẢ</p>
+                <p class="footer_copyright">Liên Hệ</p>
             </div>
             <div class="footer-section contact-info">
                 <p><i class="bi bi-envelope"></i> Email: nhomtacgia@gmail.com</p>
